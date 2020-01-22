@@ -22,6 +22,7 @@ struct ContentView: View {
             Text("Longitude: \(self.longitude)")
             Text("Placemark: \(self.placemark)")
             Text("Status: \(self.status)")
+            MapView()
         }
     }
 }
