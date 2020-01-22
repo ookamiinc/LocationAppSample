@@ -12,14 +12,21 @@ import MapKit
 struct MapView: UIViewRepresentable {
     typealias UIViewType = MKMapView
 
+    @ObservedObject var lm = LocationManager()
+
     func makeUIView(context: UIViewRepresentableContext<MapView>) -> MKMapView {
-        MKMapView(frame: .zero)
+        let uiView = MKMapView(frame: .zero)
+        uiView.showsUserLocation = true
+        let coordinate = CLLocationCoordinate2D(latitude: 35.66366485323353, longitude: 139.65794269939852)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        uiView.setRegion(region, animated: true)
+        return uiView
     }
 
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
-        let coordinate = CLLocationCoordinate2D(latitude: 37.3351, longitude: -122.0088)
-        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        uiView.setRegion(region, animated: true)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: lm.location?.latitude ?? 35.66366485323353, longitude: lm.location?.longitude ?? 139.65794269939852)
+        uiView.addAnnotation(annotation)
     }
 }
