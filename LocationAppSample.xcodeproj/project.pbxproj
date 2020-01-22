@@ -18,6 +18,7 @@
 		130F764123D8A1ED00E1F043 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F764023D8A1ED00E1F043 /* LocationManager.swift */; };
 		130F764223D8A48000E1F043 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130F763C23D89A2800E1F043 /* CoreLocation.framework */; };
 		130F764423D8A53200E1F043 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130F764323D8A53200E1F043 /* MapKit.framework */; };
+		130F764623D8A55300E1F043 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F764523D8A55300E1F043 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		130F763C23D89A2800E1F043 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		130F764023D8A1ED00E1F043 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		130F764323D8A53200E1F043 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		130F764523D8A55300E1F043 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				130F761923D8970F00E1F043 /* Info.plist */,
 				130F761323D8970F00E1F043 /* Preview Content */,
 				130F764023D8A1ED00E1F043 /* LocationManager.swift */,
+				130F764523D8A55300E1F043 /* MapView.swift */,
 			);
 			path = LocationAppSample;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				130F760C23D8970D00E1F043 /* AppDelegate.swift in Sources */,
 				130F760E23D8970D00E1F043 /* SceneDelegate.swift in Sources */,
+				130F764623D8A55300E1F043 /* MapView.swift in Sources */,
 				130F764123D8A1ED00E1F043 /* LocationManager.swift in Sources */,
 				130F761023D8970D00E1F043 /* ContentView.swift in Sources */,
 			);
