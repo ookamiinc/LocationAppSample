@@ -25,6 +25,19 @@ struct ContentView: View {
     var accelerationY: String { return("\(mm.accelerometerData?.acceleration.y ?? 0)") }
     var accelerationZ: String { return("\(mm.accelerometerData?.acceleration.z ?? 0)") }
 
+    var attitudeRoll: String { return("\(mm.motion?.attitude.roll ?? 0)") }
+    var attitudePitch: String { return("\(mm.motion?.attitude.pitch ?? 0)") }
+    var attitudeYaw: String { return("\(mm.motion?.attitude.yaw ?? 0)") }
+    var attitudeRotationMatrix: String { return("\(String(describing: mm.motion?.attitude.rotationMatrix))") }
+
+    var rotationRateX: String { return("\(mm.motion?.rotationRate.x ?? 0)") }
+    var rotationRateY: String { return("\(mm.motion?.rotationRate.y ?? 0)") }
+    var rotationRateZ: String { return("\(mm.motion?.rotationRate.z ?? 0)") }
+
+    var gravityX: String { return("\(mm.motion?.gravity.x ?? 0)") }
+    var gravityY: String { return("\(mm.motion?.gravity.y ?? 0)") }
+    var gravityZ: String { return("\(mm.motion?.gravity.z ?? 0)") }
+
     var body: some View {
         VStack {
             Group {
@@ -42,6 +55,22 @@ struct ContentView: View {
                 Text("Acceleration x: \(self.accelerationX)")
                 Text("Acceleration y: \(self.accelerationY)")
                 Text("Acceleration z: \(self.accelerationZ)")
+            }
+            Group {
+                Text("Attitude Roll: \(self.attitudeRoll)")
+                Text("Attitude Pitch: \(self.attitudePitch)")
+                Text("Attitude Yaw: \(self.attitudeYaw)")
+                Text("Attitude RotationMatrix: \(self.attitudeRotationMatrix)")
+            }
+            Group {
+                Text("RotationRate x: \(self.rotationRateX)")
+                Text("RotationRate y: \(self.rotationRateY)")
+                Text("RotationRate z: \(self.rotationRateZ)")
+            }
+            Group {
+                Text("Gravity x: \(self.gravityX)")
+                Text("Gravity y: \(self.gravityY)")
+                Text("Gravity z: \(self.gravityZ)")
             }
             MapView()
         }
