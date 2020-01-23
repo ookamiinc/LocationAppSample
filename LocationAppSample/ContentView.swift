@@ -21,15 +21,28 @@ struct ContentView: View {
     var magneticFieldY: String { return("\(mm.magnetometerData?.magneticField.y ?? 0)") }
     var magneticFieldZ: String { return("\(mm.magnetometerData?.magneticField.z ?? 0)") }
 
+    var accelerationX: String { return("\(mm.accelerometerData?.acceleration.x ?? 0)") }
+    var accelerationY: String { return("\(mm.accelerometerData?.acceleration.y ?? 0)") }
+    var accelerationZ: String { return("\(mm.accelerometerData?.acceleration.z ?? 0)") }
+
     var body: some View {
         VStack {
-            Text("Latitude: \(self.latitude)")
-            Text("Longitude: \(self.longitude)")
-            Text("Placemark: \(self.placemark)")
-            Text("Status: \(self.status)")
-            Text("Magnetic x: \(self.magneticFieldX)")
-            Text("Magnetic y: \(self.magneticFieldY)")
-            Text("Magnetic z: \(self.magneticFieldZ)")
+            Group {
+                Text("Latitude: \(self.latitude)")
+                Text("Longitude: \(self.longitude)")
+                Text("Placemark: \(self.placemark)")
+                Text("Status: \(self.status)")
+            }
+            Group {
+                Text("Magnetic x: \(self.magneticFieldX)")
+                Text("Magnetic y: \(self.magneticFieldY)")
+                Text("Magnetic z: \(self.magneticFieldZ)")
+            }
+            Group {
+                Text("Acceleration x: \(self.accelerationX)")
+                Text("Acceleration y: \(self.accelerationY)")
+                Text("Acceleration z: \(self.accelerationZ)")
+            }
             MapView()
         }
     }
