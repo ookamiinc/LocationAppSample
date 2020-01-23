@@ -23,6 +23,10 @@ class MotionManager: NSObject, ObservableObject {
         willSet { objectWillChange.send() }
     }
 
+    @Published var motion: CMDeviceMotion? {
+        willSet { objectWillChange.send() }
+    }
+
     override init() {
         super.init()
 
@@ -46,6 +50,18 @@ class MotionManager: NSObject, ObservableObject {
                 }
                 if let accelData = accelerometerData {
                     self.accelerometerData = accelData
+                }
+            }
+        }
+
+        if self.motionManager.isDeviceMotionAvailable {
+            self.motionManager.startDeviceMotionUpdates(to: .main) { (deviceMotionData, error) in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                if let motionData = deviceMotionData {
+                    self.motion = motionData
                 }
             }
         }
