@@ -19,6 +19,10 @@ class MotionManager: NSObject, ObservableObject {
         willSet { objectWillChange.send()}
     }
 
+    @Published var accelerometerData: CMAccelerometerData? {
+        willSet { objectWillChange.send() }
+    }
+
     override init() {
         super.init()
 
@@ -30,6 +34,18 @@ class MotionManager: NSObject, ObservableObject {
                 }
                 if let magnetData = magnetometerData {
                     self.magnetometerData = magnetData
+                }
+            }
+        }
+
+        if self.motionManager.isAccelerometerAvailable {
+            self.motionManager.startAccelerometerUpdates(to: .main) { (accelerometerData, error) in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                if let accelData = accelerometerData {
+                    self.accelerometerData = accelData
                 }
             }
         }
