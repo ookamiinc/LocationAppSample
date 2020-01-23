@@ -21,13 +21,15 @@ class MotionManager: NSObject, ObservableObject {
   override init() {
     super.init()
 
-    self.motionManager.startMagnetometerUpdates(to: .main) { (magnetometerData, error) in
-        guard error == nil else {
-            print(error!)
-            return
-        }
-        if let magnetData = magnetometerData {
-            self.magnetometerData = magnetData
+    if self.motionManager.isMagnetometerAvailable {
+        self.motionManager.startMagnetometerUpdates(to: .main) { (magnetometerData, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            if let magnetData = magnetometerData {
+                self.magnetometerData = magnetData
+            }
         }
     }
   }
