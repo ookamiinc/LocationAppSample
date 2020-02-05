@@ -26,7 +26,6 @@ struct ContentView: View {
             Group {
                 Text("Latitude: \(self.latitude)")
                 Text("Longitude: \(self.longitude)")
-                Text("Placemark: \(self.placemark)")
                 Text("Status: \(self.status)")
                 Text("Speed: \(self.speed)")
                 Text("Course: \(self.course)")
