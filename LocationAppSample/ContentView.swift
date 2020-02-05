@@ -17,6 +17,9 @@ struct ContentView: View {
     var placemark: String { return("\(lm.placemark?.description ?? "XXX")") }
     var status: String    { return("\(String(describing: lm.status))") }
 
+    var heading: String { return("\(lm.heading?.magneticHeading ?? -1)") }
+    var trueHeading: String { return("\(lm.heading?.trueHeading ?? -1)") }
+
     var magneticFieldX: String { return("\(mm.magnetometerData?.magneticField.x ?? 0)") }
     var magneticFieldY: String { return("\(mm.magnetometerData?.magneticField.y ?? 0)") }
     var magneticFieldZ: String { return("\(mm.magnetometerData?.magneticField.z ?? 0)") }
@@ -45,6 +48,10 @@ struct ContentView: View {
                 Text("Longitude: \(self.longitude)")
                 Text("Placemark: \(self.placemark)")
                 Text("Status: \(self.status)")
+            }
+            Group {
+                Text("Heading: \(self.heading)")
+                Text("TrueHeading: \(self.trueHeading)")
             }
             Group {
                 Text("Magnetic x: \(self.magneticFieldX)")
