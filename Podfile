@@ -6,6 +6,8 @@ target 'LocationAppSample' do
   use_frameworks!
 
   # Pods for LocationAppSample
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
   target 'LocationAppSampleTests' do
     inherit! :search_paths
