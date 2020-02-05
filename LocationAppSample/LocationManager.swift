@@ -23,6 +23,10 @@ class LocationManager: NSObject, ObservableObject {
         willSet { objectWillChange.send() }
     }
 
+    @Published var heading: CLHeading? {
+        willSet { objectWillChange.send() }
+    }
+
     @Published var placemark: CLPlacemark? {
         willSet { objectWillChange.send() }
     }
@@ -38,6 +42,8 @@ class LocationManager: NSObject, ObservableObject {
 
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
+
+        self.locationManager.startUpdatingHeading()
     }
 
     private func geocode() {
@@ -61,6 +67,14 @@ extension LocationManager: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         self.location = location
         self.geocode()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        self.heading = newHeading
+    }
+
+    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
+        return true
     }
 }
 
