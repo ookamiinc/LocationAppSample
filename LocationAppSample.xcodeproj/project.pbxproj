@@ -19,6 +19,9 @@
 		130F764223D8A48000E1F043 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130F763C23D89A2800E1F043 /* CoreLocation.framework */; };
 		130F764423D8A53200E1F043 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130F764323D8A53200E1F043 /* MapKit.framework */; };
 		130F764623D8A55300E1F043 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F764523D8A55300E1F043 /* MapView.swift */; };
+		13CFA60723EA7B8E00DAB76D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CFA60623EA7B8E00DAB76D /* GoogleService-Info.plist */; };
+		13CFA60823EA7B8E00DAB76D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CFA60623EA7B8E00DAB76D /* GoogleService-Info.plist */; };
+		13CFA60923EA7B8E00DAB76D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CFA60623EA7B8E00DAB76D /* GoogleService-Info.plist */; };
 		13E4A83E23D97E7100D32FA4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4A83D23D97E7100D32FA4 /* MotionManager.swift */; };
 		13E4A84023D97E8E00D32FA4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E4A83F23D97E8E00D32FA4 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +62,7 @@
 		130F764023D8A1ED00E1F043 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		130F764323D8A53200E1F043 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		130F764523D8A55300E1F043 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		13CFA60623EA7B8E00DAB76D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13E4A83D23D97E7100D32FA4 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		13E4A83F23D97E8E00D32FA4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -121,6 +125,7 @@
 				130F761123D8970F00E1F043 /* Assets.xcassets */,
 				130F761623D8970F00E1F043 /* LaunchScreen.storyboard */,
 				130F761923D8970F00E1F043 /* Info.plist */,
+				13CFA60623EA7B8E00DAB76D /* GoogleService-Info.plist */,
 				130F761323D8970F00E1F043 /* Preview Content */,
 				130F764023D8A1ED00E1F043 /* LocationManager.swift */,
 				130F764523D8A55300E1F043 /* MapView.swift */,
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				130F761823D8970F00E1F043 /* LaunchScreen.storyboard in Resources */,
+				13CFA60723EA7B8E00DAB76D /* GoogleService-Info.plist in Resources */,
 				130F761523D8970F00E1F043 /* Preview Assets.xcassets in Resources */,
 				130F761223D8970F00E1F043 /* Assets.xcassets in Resources */,
 			);
@@ -279,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CFA60823EA7B8E00DAB76D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CFA60923EA7B8E00DAB76D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
