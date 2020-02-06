@@ -43,8 +43,8 @@ class LocationManager: NSObject, ObservableObject {
         self.locationManager.delegate = self
 
         self.locationManager.distanceFilter = kCLDistanceFilterNone
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.activityType = .otherNavigation
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        self.locationManager.activityType = .automotiveNavigation
 
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
