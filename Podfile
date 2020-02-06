@@ -7,6 +7,7 @@ target 'LocationAppSample' do
 
   # Pods for LocationAppSample
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
   pod 'Firebase/Database'
 
   target 'LocationAppSampleTests' do
