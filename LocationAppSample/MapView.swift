@@ -25,8 +25,5 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: lm.location?.latitude ?? 35.66366485323353, longitude: lm.location?.longitude ?? 139.65794269939852)
-        uiView.addAnnotation(annotation)
     }
 }
