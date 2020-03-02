@@ -11,6 +11,9 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var lm = LocationManager()
 
+    var stream_id: String { return ("\(lm.stream_id)") }
+    var car_id: String { return ("\(lm.car_id)") }
+
     var latitude: String  { return("\(lm.location?.latitude ?? 0)") }
     var longitude: String { return("\(lm.location?.longitude ?? 0)") }
     var placemark: String { return("\(lm.placemark?.description ?? "XXX")") }
@@ -23,6 +26,10 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Group {
+                Text("Stream ID: \(self.stream_id)").font(Font.system(size: 30))
+                Text("Car No. \(self.car_id)").font(Font.system(size: 30))
+            }
             Group {
                 Text("Latitude: \(self.latitude)")
                 Text("Longitude: \(self.longitude)")
