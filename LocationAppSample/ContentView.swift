@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var lm = LocationManager()
 
-    var stream_id: String { return ("\(lm.stream_id)") }
+    var competition_id: String { return ("\(lm.competition_id)") }
     var car_id: String { return ("\(lm.car_id)") }
 
     var latitude: String  { return("\(lm.location?.latitude ?? 0)") }
@@ -27,7 +27,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Group {
-                Text("Stream ID: \(self.stream_id)").font(Font.system(size: 30))
+                Text("Stream ID: \(self.competition_id)").font(Font.system(size: 30))
                 Text("Car No. \(self.car_id)").font(Font.system(size: 30))
             }
             Group {

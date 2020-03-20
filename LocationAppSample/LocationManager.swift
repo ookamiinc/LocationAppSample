@@ -19,7 +19,7 @@ class LocationManager: NSObject, ObservableObject {
     var databaseRef: DatabaseReference!
     var lastLocation: CLLocation?
 
-    let stream_id = 52283
+    let competition_id = 52283
     let car_id = 36
 
     @Published var status: CLAuthorizationStatus? {
@@ -68,7 +68,7 @@ class LocationManager: NSObject, ObservableObject {
 
     private func sendLocation(_ newLocation: CLLocation) {
         let locationData = ["latitude": newLocation.latitude, "longitude": newLocation.longitude, "speed": newLocation.speed, "course": newLocation.course, "timestamp": newLocation.timestamp.timeIntervalSince1970.description, "timestamp_ms": (newLocation.timestamp.timeIntervalSince1970 * 1000).description, "date": newLocation.timestamp.description] as [String: Any]
-        databaseRef.child("v0/locations/\(stream_id)/\(car_id)").childByAutoId().setValue(locationData)
+        databaseRef.child("v0/locations/\(competition_id)/\(car_id)").childByAutoId().setValue(locationData)
     }
 }
 
