@@ -44,6 +44,7 @@ class LocationManager: NSObject, ObservableObject {
         databaseRef = Database.database().reference()
 
         self.locationManager.delegate = self
+        self.locationManager.allowsBackgroundLocationUpdates = true
 
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
