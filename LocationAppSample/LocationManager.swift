@@ -73,7 +73,7 @@ class LocationManager: NSObject, ObservableObject {
             "longitude": newLocation.longitude,
             "speed": newLocation.speed,
             "course": newLocation.course,
-            "timestamp": newLocation.timestamp.timeIntervalSince1970.description
+            "timestamp": newLocation.timestamp.timeIntervalSince1970
         ]
         databaseRef.child("v0/locations/\(competition_id)/\(car_id)").childByAutoId().setValue(locationData)
     }
