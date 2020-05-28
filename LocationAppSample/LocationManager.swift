@@ -68,7 +68,15 @@ class LocationManager: NSObject, ObservableObject {
     }
 
     private func sendLocation(_ newLocation: CLLocation) {
-        let locationData = ["latitude": newLocation.latitude, "longitude": newLocation.longitude, "speed": newLocation.speed, "course": newLocation.course, "timestamp": newLocation.timestamp.timeIntervalSince1970.description, "timestamp_ms": (newLocation.timestamp.timeIntervalSince1970 * 1000).description, "date": newLocation.timestamp.description] as [String: Any]
+        let locationData: [String: Any] = [
+            "latitude": newLocation.latitude,
+            "longitude": newLocation.longitude,
+            "speed": newLocation.speed,
+            "course": newLocation.course,
+            "timestamp": newLocation.timestamp.timeIntervalSince1970.description,
+            "timestamp_ms": (newLocation.timestamp.timeIntervalSince1970 * 1000).description,
+            "date": newLocation.timestamp.description
+        ]
         databaseRef.child("v0/locations/\(competition_id)/\(car_id)").childByAutoId().setValue(locationData)
     }
 }
