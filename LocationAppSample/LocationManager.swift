@@ -30,14 +30,6 @@ class LocationManager: NSObject, ObservableObject {
         willSet { objectWillChange.send() }
     }
 
-    @Published var heading: CLHeading? {
-        willSet { objectWillChange.send() }
-    }
-
-    @Published var placemark: CLPlacemark? {
-        willSet { objectWillChange.send() }
-    }
-
     override init() {
         super.init()
 
@@ -52,19 +44,6 @@ class LocationManager: NSObject, ObservableObject {
 
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
-
-        self.locationManager.startUpdatingHeading()
-    }
-
-    private func geocode() {
-        guard let location = self.location else { return }
-        geocoder.reverseGeocodeLocation(location, completionHandler: { (places, error) in
-            if error == nil {
-                self.placemark = places?[0]
-            } else {
-                self.placemark = nil
-            }
-        })
     }
 
     private func sendLocation(_ newLocation: CLLocation) {
@@ -92,15 +71,6 @@ extension LocationManager: CLLocationManagerDelegate {
         }
         self.lastLocation = self.location
         self.location = location
-        self.geocode()
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        self.heading = newHeading
-    }
-
-    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
-        return true
     }
 }
 
