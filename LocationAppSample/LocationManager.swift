@@ -13,7 +13,6 @@ import FirebaseDatabase
 
 class LocationManager: NSObject, ObservableObject {
     private let locationManager = CLLocationManager()
-    private let geocoder = CLGeocoder()
     let objectWillChange = PassthroughSubject<Void, Never>()
 
     var databaseRef: DatabaseReference!
