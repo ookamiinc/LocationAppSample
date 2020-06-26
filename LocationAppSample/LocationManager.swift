@@ -15,8 +15,8 @@ class LocationManager: NSObject, ObservableObject {
     private let locationManager = CLLocationManager()
     let objectWillChange = PassthroughSubject<Void, Never>()
 
-    var databaseRef: DatabaseReference!
-    var lastLocation: CLLocation?
+    private var databaseRef: DatabaseReference!
+    private var lastLocation: CLLocation?
 
     let competition_id = 52283
     let car_id = 36

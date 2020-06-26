@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var lm = LocationManager()
+    @ObservedObject private var lm = LocationManager()
 
-    var competition_id: String { return ("\(lm.competition_id)") }
-    var car_id: String { return ("\(lm.car_id)") }
+    private var competition_id: String { return ("\(lm.competition_id)") }
+    private var car_id: String { return ("\(lm.car_id)") }
 
-    var latitude: String  { return("\(lm.location?.latitude ?? 0)") }
-    var longitude: String { return("\(lm.location?.longitude ?? 0)") }
-    var status: String    { return("\(String(describing: lm.status))") }
-    var speed: String     { return("\(lm.location?.speed ?? 0)") }
-    var course: String    { return("\(lm.location?.course ?? 0)") }
+    private var latitude: String  { return("\(lm.location?.latitude ?? 0)") }
+    private var longitude: String { return("\(lm.location?.longitude ?? 0)") }
+    private var status: String    { return("\(String(describing: lm.status))") }
+    private var speed: String     { return("\(lm.location?.speed ?? 0)") }
+    private var course: String    { return("\(lm.location?.course ?? 0)") }
 
     var body: some View {
         VStack {

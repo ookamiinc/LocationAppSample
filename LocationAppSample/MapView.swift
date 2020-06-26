@@ -12,7 +12,7 @@ import MapKit
 struct MapView: UIViewRepresentable {
     typealias UIViewType = MKMapView
 
-    @ObservedObject var lm = LocationManager()
+    @ObservedObject private var lm = LocationManager()
 
     func makeUIView(context: UIViewRepresentableContext<MapView>) -> MKMapView {
         let uiView = MKMapView(frame: .zero)
