@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Group {
-                Text("Stream ID: \(self.competition_id)").font(Font.system(size: 30))
+                Text("Competition ID: \(self.competition_id)").font(Font.system(size: 30))
                 Text("Car No. \(self.car_id)").font(Font.system(size: 30))
             }
             Group {
