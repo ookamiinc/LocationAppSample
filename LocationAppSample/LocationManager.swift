@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import CoreLocation
+import FirebaseAuth
 import FirebaseDatabase
 
 class LocationManager: NSObject, ObservableObject {
@@ -31,6 +32,12 @@ class LocationManager: NSObject, ObservableObject {
 
     override init() {
         super.init()
+
+        Auth.auth().addStateDidChangeListener { auth, user in
+          if user == nil {
+            Auth.auth().signIn(withEmail: "EMAIL", password: "PASSWORD")
+          }
+        }
 
         databaseRef = Database.database().reference()
 
